@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>起始页</title>
+    <script
+      src="https://kit.fontawesome.com/8d476dd5e6.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <style>
+    /* * {
+      border: solid 5px rgb(145, 145, 145);
+    } */
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-image: url(https://cn.bing.com/th?id=OHR.WillowLake_ZH-CN9798614021_UHD.jpg&pid=hp&w=1920);
+    }
+    .header {
+      flex: 1;
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      flex: 4;
+    }
+    .bottom {
+      flex: 1;
+    }
+    .searchbararea {
+      display: flex;
+      min-height: 180px;
+      background-color: none;
+      justify-content: center;
+      align-items: flex-end;
+    }
+    .searchbar {
+      height: 42px;
+      width: 380px;
+      margin: 10px;
+      border-radius: 15px;
+      background-color: #ffffff;
+    }
+    .searchicon {
+      font-size: 20px;
+      margin-left: 0px;
+      margin-top: 10px;
+    }
+    .quicklinkarea {
+      display: flex;
+      flex: 1;
+      flex-direction: row;
+    }
+    ul {
+      display: flex;
+      width: 100%;
+      padding: 0;
+      list-style: none;
+      text-align: center;
+      justify-content: center;
+    }
+    ul li {
+      height: 80px;
+      width: 80px;
+      padding: 10px;
+      border-radius: 15px;
+      background-color: rgba(207, 207, 207, 0.267);
+
+      margin: 40px;
+    }
+    ul li:hover {
+      background-color: #ffffff;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.493);
+    }
+    a {
+      display: inline-block;
+      background-color: none;
+    }
+    .icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 15px;
+    }
+    .text {
+      font-size: 14px;
+      margin-top: 12px;
+      font-family: 微软雅黑;
+    }
+    input {
+      width: 318px;
+      margin-left: 3px;
+      padding-left: 15px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      border: 0;
+      border-radius: 10px;
+      outline: 0;
+      background-color: rgb(255, 255, 255);
+      font-size: 17px;
+      text-align: start;
+    }
+    input:hover {
+      background-color: #0000000c;
+    }
+    input:focus {
+      background-color: #ffffff;
+    }
+    button {
+      border: none;
+      background: none;
+      scale: 90%;
+      transition: 0.1s;
+    }
+    button:hover {
+      cursor: pointer;
+      scale: 100%;
+    }
+    @media (max-width: 600px) {
+      .searchbar {
+        width: 320px;
+      }
+      .searchicon {
+        position: relative;
+        left: 88%;
+        top: -56%;
+        padding: 0px;
+        margin: 0px;
+      }
+      input {
+        width: 300px;
+        margin-top: 5px;
+        font-size: 16px;
+      }
+      ul {
+        flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+      }
+      ul li {
+        height: 72px;
+        width: 72px;
+        margin: 34px;
+      }
+    }
+  </style>
+  <body>
+    <div class="header"></div>
+    <div class="content">
+      <div class="searchbararea">
+        <div class="searchbar">
+          <input id="typing" type="text" placeholder="请输入查询内容" />
+          <button
+            class="fas fa-search searchicon"
+            onclick="search_by_bing()"
+          ></button>
+          <script>
+            function search_by_bing() {
+              let keyword = window.document.getElementById("typing").value;
+              let link = "https://www.bing.com/search?q=" + keyword;
+              window.open(link, "_blank");
+            }
+            document
+              .getElementById("typing")
+              .addEventListener("keypress", function (event) {
+                if (event.key === "Enter") {
+                  search_by_bing();
+                }
+              });
+          </script>
+        </div>
+      </div>
+      <div class="quicklinkarea">
+        <ul>
+          <li>
+            <a href="https://www.bilibili.com/" alt="哔哩哔哩">
+              <img
+                class="icon"
+                src="https://favicon.pub/bilibili.com?s=128"
+                alt="bilibili.com favicon (large)"
+            /></a>
+            <p class="text">哔哩哔哩</p>
+          </li>
+          <li>
+            <a href="https://www.acfun.cn/" alt="A站">
+              <img
+                class="icon"
+                src="https://cdn.aixifan.com/ico/favicon.ico"
+                alt="acfun.cn favicon (large)"
+            /></a>
+            <p class="text">acfun</p>
+          </li>
+          <li>
+            <a href="https://www.gcores.com/" alt="机核">
+              <img
+                class="icon"
+                src="https://favicon.pub/gcores.com?s=128"
+                alt="gcores.com favicon (large)"
+            /></a>
+            <p class="text">机核网</p>
+          </li>
+          <li>
+            <a href="https://www.yandex.com/" alt="yandex">
+              <img
+                class="icon"
+                src="https://favicon.pub/yandex.com?s=128"
+                alt="yandex.com favicon (large)"
+            /></a>
+            <p class="text">yandex</p>
+          </li>
+          <li>
+            <a href="https://www.deepseek.com/" alt="deepseek">
+              <img
+                class="icon"
+                src="https://favicon.pub/deepseek.com?s=128"
+                alt="deepseek.com favicon (large)"
+            /></a>
+            <p class="text">deepseek</p>
+          </li>
+          <li>
+            <a href="https://www.nhk.jp/" alt="NHK">
+              <img
+                class="icon"
+                src="https://favicon.pub/nhk.jp?s=128"
+                alt="nhk.jp favicon (large)"
+            /></a>
+            <p class="text">NHK</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom"></div>
+    <div></div>
+  </body>
+</html>
